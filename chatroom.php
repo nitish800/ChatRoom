@@ -2,7 +2,9 @@
 <head><title>Chat Room</title>
 
 <style>
-
+table{
+	width:100%
+}
 h1{
 	text-align:center;
 	color:#ffffff;
@@ -21,6 +23,15 @@ h1{
 .row1{
 	text-align:center;
 }
+.row2{
+	text-align:Left;
+	color:#ff0000;
+}
+.row3{
+	text-align:Left;
+	color:#00ff00;
+}
+
 
 </style>
 </head>
@@ -35,13 +46,13 @@ $credential = "user=postgres password=###alpha@@@123";
 
 $session = pg_connect("$host $port $dbname $credential");
 
-$query = "select message,from_message from messages";
+$query = "select message,from_message from messages order by message_id desc limit 50;";
 
 
 $result = pg_query($session,$query);
 ?>
-<div class="pa2">
-<table width="500px" border="0px" bgcolor="#ede7f6" >
+
+<table  border="0px" bgcolor="#ede7f6" >
 <tr bgcolor="#b39ddb">
 	<th colspan="2"><h1>Chat</h1></th>
 </tr>
@@ -54,15 +65,15 @@ if($result){
 while($result_data = pg_fetch_row($result))
 {
 echo "<tr>";
-echo "<td class='row1' >".$result_data[1]."</td>";
-echo "<td class='row1' >".$result_data[0]."</td>";
+echo "<td class='row2' >".$result_data[1]."</td>";
+echo "<td class='row3' >".$result_data[0]."</td>";
 echo "</tr>";
 }
 }
 pg_close($session);
 ?>
 </table>
-</div>
+
 
 
 <br>
