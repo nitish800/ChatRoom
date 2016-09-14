@@ -23,6 +23,7 @@ if($ret)
 	header("Location:/chat/chatroom.php");
 	exit();
 }
+
 pg_close($session);
 
 ?>
