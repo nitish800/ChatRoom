@@ -1,9 +1,8 @@
 <?php
-
+session_start();
 // this form take user_name and name as input
 $message = $_REQUEST['message'];
-$user_name = $_REQUEST['u_name'];
-
+$user_name = $_SESSION["un"];
 
 // credential for db login
 $host = "host=127.0.0.1";

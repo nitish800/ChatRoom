@@ -24,12 +24,14 @@ h1{
 	text-align:center;
 }
 .row2{
-	text-align:Left;
-	color:#ff0000;
+	text-align:center;
+	color:#000000;
+	font-family:"Comic Sans MS";
 }
 .row3{
 	text-align:Left;
-	color:#00ff00;
+	color:#000000;
+	font-family:"Comic Sans MS";
 }
 
 
@@ -87,10 +89,7 @@ pg_close($session);
 	<td class="row1" >Enter Message</td>
 	<td class="row1" ><textarea type="text" name="message" class="inp_size" ></textarea></td>
 </tr>
-<tr>
-	<td class="row1" >Enter UserName</td>
-	<td class="row1" ><input type="text" name="u_name" class="inp_size" /></td>
-</tr>
+
 <tr>
 	<td colspan="2" align="center"><input type="Submit" name="Submit" value="Message"/></td>
 </tr>

@@ -1,8 +1,9 @@
 <?php
-
+session_start();
 // this form take user_name and name as input
 $name = $_REQUEST['name'];
 $user_name = $_REQUEST['u_name'];
+$_SESSION["un"]=$user_name;
 if($user_name == "")
 {
 	echo "<b> Enter a user Name</b>";
@@ -10,7 +11,6 @@ if($user_name == "")
 	exit();
 }
 	
-
 
 // credential for db login
 $host = "host=127.0.0.1";
